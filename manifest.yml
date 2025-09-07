@@ -1,0 +1,65 @@
+_metadata:
+  major_version: 1
+  minor_version: 1
+display_information:
+  name: MusterBot
+  description: A bot for daily team accountability and status check-ins.
+  background_color: "#2f3136"
+features:
+  bot_user:
+    display_name: MusterBot
+    always_online: true
+  slash_commands:
+    - command: /timeoff
+      description: Register your upcoming leave or PTO.
+      usage_hint: ""
+      should_escape: false
+    - command: /calendar
+      description: Display a calendar of team leave and holidays.
+      usage_hint: ""
+      should_escape: false
+    - command: /status
+      description: Check the status of a team member or the whole team.
+      usage_hint: "[@user|team]"
+      should_escape: false
+    - command: /help
+      description: Shows this message.
+      usage_hint: ""
+      should_escape: false
+    - command: /holiday
+      description: "[Admin] Add a company holiday."
+      usage_hint: "[YYYY-MM-DD] [description]"
+      should_escape: false
+    - command: /edit_status
+      description: "[Admin] Manually set a user's status for today."
+      usage_hint: "[@user] [status]"
+      should_escape: false
+    - command: /add_admin
+      description: "[Admin] Grant a user admin permissions for this bot."
+      usage_hint: "[@user]"
+      should_escape: false
+    - command: /report
+      description: "[Admin] Generate an accountability report."
+      usage_hint: "[@user] [period]"
+      should_escape: false
+    - command: /config
+      description: "[Admin] View or set bot configuration."
+      usage_hint: "[key] [value]"
+      should_escape: false
+oauth_config:
+  scopes:
+    bot:
+      - channels:history
+      - channels:read
+      - chat:write
+      - commands
+      - groups:history
+      - im:history
+      - mpim:history
+      - users:read
+settings:
+  interactivity:
+    is_enabled: true
+  org_deploy_enabled: false
+  socket_mode_enabled: true
+  token_rotation_enabled: false
